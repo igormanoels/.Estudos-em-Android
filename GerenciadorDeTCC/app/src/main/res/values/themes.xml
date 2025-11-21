@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.GerenciadorDeTCC" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Cor de fundo principal para as telas -->
+        <item name="android:windowBackground">@color/branco2</item>
+
+        <!-- Define o estilo de botão padrão para os botões principais -->
+        <item name="materialButtonStyle">@style/App.Button</item>
+
+    </style>
+
+    <style name="Theme.GerenciadorDeTCC" parent="Base.Theme.GerenciadorDeTCC" />
+
+    <!-- Estilo customizado para os botões principais -->
+    <style name="App.Button" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/button_color_selector</item>
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
+    <!-- Estilo customizado para botões de texto (como o 'Voltar') -->
+    <style name="App.TextButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/branco</item>
+    </style>
+
+</resources>

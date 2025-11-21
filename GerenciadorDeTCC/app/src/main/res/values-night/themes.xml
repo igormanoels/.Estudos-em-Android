@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.GerenciadorDeTCC" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Para o modo noturno, o fundo escuro padrão do Material 3 será usado. -->
+
+        <!-- Define o estilo de botão padrão para os botões principais -->
+        <item name="materialButtonStyle">@style/App.Button</item>
+
+    </style>
+</resources>

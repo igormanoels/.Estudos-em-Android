@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".GestaoCadastroActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="Gestão de Cadastro"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:textStyle="bold" />
+
+    <!-- Menu para Ação -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menuTipoGestao"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Selecione a ação">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTipoGestao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Menu para Tipo de Item -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menuTipoItem"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Selecione o tipo de item">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTipoItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo de Busca -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/busca_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="ID ou Matrícula">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/busca_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Área de Resultado -->
+            <TextView
+                android:id="@+id/resultado_busca_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorSurfaceVariant"
+                android:padding="8dp"
+                android:text="Aguardando busca..."
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+            <!-- Contêiner para o formulário de alteração (inicialmente oculto) -->
+            <FrameLayout
+                android:id="@+id/alterar_form_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botões de Ação -->
+    <Button
+        android:id="@+id/btnAcaoPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Efetivar Ação" />
+
+    <Button
+        android:id="@+id/btnVoltar"
+        style="@style/App.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Voltar" />
+
+</LinearLayout>

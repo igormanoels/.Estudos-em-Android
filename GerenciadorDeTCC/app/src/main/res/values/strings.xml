@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">GerenciadorDeTCC</string>
+
+    <string-array name="tipos_cadastro">
+        <item>Turma</item>
+        <item>Professor</item>
+        <item>Grupo TCC</item>
+        <item>Curso</item>
+        <item>Orientador</item>
+        <item>Aluno</item>
+    </string-array>
+
+    <string-array name="tipos_gestao">
+        <item>Consultar</item>
+        <item>Alterar</item>
+        <item>Remover</item>
+    </string-array>
+
+    <string-array name="filtro_disciplina">
+        <item>Qualquer</item>
+        <item>TG1</item>
+        <item>TG2</item>
+    </string-array>
+
+    <string-array name="filtro_tipo_tcc">
+        <item>Qualquer</item>
+        <item>DESENVOLVIMENTO_SOFTWARE</item>
+        <item>MONOGRAFIA</item>
+        <item>ARTIGO</item>
+        <item>PROJETO_NEGOCIO</item>
+    </string-array>
+
+    <string name="descricao_logo_fatec">Logo da Fatec Zona Leste</string>
+
+</resources>
