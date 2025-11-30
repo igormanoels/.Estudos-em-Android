@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -10,10 +11,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
         android:text="Gestão de Cadastro"
         android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
         android:textStyle="bold" />
 
     <!-- Menu para Ação -->
@@ -28,7 +29,7 @@
             android:id="@+id/autoCompleteTipoGestao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="none"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Menu para Tipo de Item -->
@@ -44,35 +45,49 @@
             android:id="@+id/autoCompleteTipoItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="none"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo de Busca -->
+    <!-- Campo de Busca Principal -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/busca_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="ID ou Matrícula">
+        android:hint="ID ou Matrícula (Opcional)">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/busca_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- CONTÊINER PARA FILTROS DINÂMICOS -->
+    <FrameLayout
+        android:id="@+id/filtros_dinamicos_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <include layout="@layout/form_turma" android:id="@+id/filtros_turma" android:visibility="gone"/>
+        <include layout="@layout/form_professor" android:id="@+id/filtros_professor" android:visibility="gone"/>
+        <include layout="@layout/form_aluno" android:id="@+id/filtros_aluno" android:visibility="gone"/>
+        <include layout="@layout/form_orientador" android:id="@+id/filtros_orientador" android:visibility="gone"/>
+        <include layout="@layout/form_grupo_tcc" android:id="@+id/filtros_grupo_tcc" android:visibility="gone"/>
+        <include layout="@layout/form_curso" android:id="@+id/filtros_curso" android:visibility="gone"/>
+
+    </FrameLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1">
-
+        android:layout_weight="1"
+        android:layout_marginTop="16dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Área de Resultado -->
             <TextView
                 android:id="@+id/resultado_busca_text"
                 android:layout_width="match_parent"
@@ -80,25 +95,32 @@
                 android:background="?attr/colorSurfaceVariant"
                 android:padding="8dp"
                 android:text="Aguardando busca..."
-                android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"/>
 
-            <!-- Contêiner para o formulário de alteração (inicialmente oculto) -->
             <FrameLayout
                 android:id="@+id/alterar_form_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- Botões de Ação -->
+    <!-- Botões -->
+    <Button
+        android:id="@+id/btnBuscarGestao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Buscar"
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/btnAcaoPrincipal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Efetivar Ação" />
 
     <Button
